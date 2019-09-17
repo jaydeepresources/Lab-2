@@ -7,37 +7,46 @@
         <span class="h3">{{alertMsg}}</span>
     </div>
 
-    <p class="h1 mb-4">Add Employee</p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+        aria-controls="collapseExample">
+        Add Employee
+    </button>
 
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">ID</label>
-        <div class="col-sm-5">
-            <input type="text" placeholder="Enter ID" class="form-control" [(ngModel)]="newEmployee.id">
+    <div class="collapse mt-4" id="collapseExample">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">ID</label>
+                    <div class="col-sm-5">
+                        <input type="text" placeholder="Enter ID" class="form-control" [(ngModel)]="newEmployee.id">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-5">
+                        <input type="text" placeholder="Enter Name" class="form-control" [(ngModel)]="newEmployee.name">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Salary</label>
+                    <div class="col-sm-5">
+                        <input type="text" placeholder="Enter Salary" class="form-control" [(ngModel)]="newEmployee.salary">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Department</label>
+                    <div class="col-sm-5">
+                        <input type="text" placeholder="Enter Department" class="form-control" [(ngModel)]="newEmployee.department">
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary mt-3" type="button" (click)="addEmployee()">Add Employee</button>
+            </div>
         </div>
     </div>
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Name</label>
-        <div class="col-sm-5">
-            <input type="text" placeholder="Enter Name" class="form-control" [(ngModel)]="newEmployee.name">
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Salary</label>
-        <div class="col-sm-5">
-            <input type="text" placeholder="Enter Salary" class="form-control" [(ngModel)]="newEmployee.salary">
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Department</label>
-        <div class="col-sm-5">
-            <input type="text" placeholder="Enter Department" class="form-control" [(ngModel)]="newEmployee.department">
-        </div>
-    </div>
-
-    <button class="btn btn-secondary mt-3" type="button" (click)="addEmployee()">Add Employee</button>
 
     <p class="h1 my-4">Show All Employees</p>
 
@@ -58,43 +67,52 @@
                 <td>{{employee.salary}}</td>
                 <td>{{employee.department}}</td>
                 <td>
-                    <button class="btn btn-secondary mx-1" (click)="updateClicked(i)">Update</button>
+                    <button class="btn btn-secondary mx-1" (click)="updateClicked(i)" data-toggle="collapse" data-target="#collapseExampleUpdate"
+                        aria-expanded="false" aria-controls="collapseExample">Update</button>
                     <button class="btn btn-secondary mx-1" (click)="deleteEmployee(i)">Delete</button>
                 </td>
             </tr>
         </tbody>
     </table>
 
-    <p class="h1 mb-4">Update Employee</p>
+    <div class="collapse" id="collapseExampleUpdate">
+        <div class="card">
+            <div class="card-body">
 
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">ID</label>
-        <div class="col-sm-5">
-            <input type="text" placeholder="Enter ID" class="form-control" [(ngModel)]="updatedEmployee.id">
+                <p class="h1 mb-3">Update Employee</p>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">ID</label>
+                    <div class="col-sm-5">
+                        <input type="text" placeholder="Enter ID" class="form-control" [(ngModel)]="updatedEmployee.id">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-5">
+                        <input type="text" placeholder="Enter Name" class="form-control" [(ngModel)]="updatedEmployee.name">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Salary</label>
+                    <div class="col-sm-5">
+                        <input type="text" placeholder="Enter Salary" class="form-control" [(ngModel)]="updatedEmployee.salary">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Department</label>
+                    <div class="col-sm-5">
+                        <input type="text" placeholder="Enter Department" class="form-control" [(ngModel)]="updatedEmployee.department">
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary my-3" type="button" (click)="updateEmployee()">Update Employee</button>
+            </div>
         </div>
     </div>
 
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Name</label>
-        <div class="col-sm-5">
-            <input type="text" placeholder="Enter Name" class="form-control" [(ngModel)]="updatedEmployee.name">
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Salary</label>
-        <div class="col-sm-5">
-            <input type="text" placeholder="Enter Salary" class="form-control" [(ngModel)]="updatedEmployee.salary">
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Department</label>
-        <div class="col-sm-5">
-            <input type="text" placeholder="Enter Department" class="form-control" [(ngModel)]="updatedEmployee.department">
-        </div>
-    </div>
-
-    <button class="btn btn-secondary my-3" type="button" (click)="updateEmployee()">Update Employee</button>
 
 </div>
